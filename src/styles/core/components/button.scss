@@ -1,0 +1,28 @@
+@use "../helpers/" as *;
+
+.c-button {
+  text-align: center;
+  color: #0f0f0f;
+  font-size: rem(16);
+  font-weight: 700;
+  line-height: 1.125;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
+  padding-block: rem(14);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+  @include hover {
+    opacity: 0.8;
+  }
+
+  &--primary {
+    padding-inline: rem(50);
+    background-color: var(--color-accent);
+  }
+
+  &--secondary {
+    padding-inline: rem(60);
+  }
+}

@@ -1,0 +1,31 @@
+@use "helpers" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+html.is-lock {
+  overflow: hidden;
+}
+
+.c-wrapper {
+  --color-dark: #0f0f0f;
+  --color-dark-light: #707070;
+  --color-accent: #fff04b;
+  --header-mobile-height: #{fluid(62, 120)};
+
+  overflow: hidden;
+  position: relative;
+  color: var(--color-dark);
+  font-family: "Montserrat", sans-serif;
+}
+
+.c-container {
+  max-width: var(--container-width);
+  padding-inline: var(--container-padding-x);
+  margin-inline: auto;
+}
+
+@include large {
+  br {
+    display: none !important;
+  }
+}

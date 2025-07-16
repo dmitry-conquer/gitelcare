@@ -1,0 +1,44 @@
+@use "../helpers/" as *;
+
+.c-overlay {
+  border: rem(1) solid #f4f4f4;
+  position: fixed;
+  transform: translateX(100%);
+  top: var(--header-mobile-height);
+  right: 0;
+  width: 100%;
+  max-width: rem(420);
+  height: calc(100vh - var(--header-mobile-height));
+  height: calc(100dvh - var(--header-mobile-height));
+  background-color: #fff;
+  z-index: 100;
+  transition: transform 0.3s ease;
+  will-change: transform;
+
+  &.is-active {
+    transform: translateX(0);
+  }
+
+  &__inner {
+    padding: rem(80) rem(15) rem(50) rem(15);
+    height: 100%;
+    display: inline-block;
+    overflow: auto;
+  }
+
+  &__footer {
+    margin-top: rem(40);
+    display: flex;
+    column-gap: rem(42);
+    align-items: flex-end;
+  }
+
+  &__column {
+    &--left {
+      flex-basis: rem(218);
+      flex-shrink: 0;
+    }
+    &--right {
+    }
+  }
+}
