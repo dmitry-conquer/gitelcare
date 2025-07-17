@@ -1,0 +1,95 @@
+@use "../helpers/" as *;
+
+.c-features {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__container {
+  }
+
+  &__header {
+    text-align: center;
+    max-width: rem(566);
+    margin: 0 auto rem(40) auto;
+
+    p:last-child {
+      font-size: rem(20);
+    }
+  }
+
+  &__title {
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(8);
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: fluid(10, 32);
+    margin-bottom: rem(40);
+
+    @include medium {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include x-small {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__item {
+    border: rem(1) solid rgba(255, 255, 255, 0.5);
+    padding: rem(24) fluid(16, 24);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #fff;
+    min-height: rem(244);
+
+    @include medium {
+      min-height: auto;
+    }
+
+    &-icon {
+      width: rem(32);
+      margin-bottom: fluid(24, 40);
+    }
+
+    &-title {
+      color: #fff;
+      font-size: rem(20);
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: rem(8);
+    }
+
+    &-text {
+      color: var(--white, #fff);
+      font-size: rem(16);
+      font-weight: 400;
+      line-height: 1.375;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: rem(24);
+
+    p {
+      color: #fff;
+      text-align: center;
+      font-size: rem(20);
+      line-height: 1.4;
+    }
+  }
+
+  &__button {
+  }
+}

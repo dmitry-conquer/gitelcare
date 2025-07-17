@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
     <title>Home page</title>
   </head>
   <body data-smooth-scroll="true">
@@ -16,7 +17,7 @@
               <h1 class="c-hero__title">Concierge Medicine</h1>
               <p class="c-hero__subtitle">Personalized Healthcare Solutions</p>
               <div class="c-hero__actions">
-                <a href="#" class="c-hero__button c-button c-button--primary">consult now</a>
+                <a href="#about" class="c-hero__button c-button c-button--primary">consult now</a>
               </div>
             </div>
           </div>
@@ -30,7 +31,7 @@
           </a>
         </section>
 
-        <section class="c-two-columns c-section">
+        <section class="c-two-columns c-section" id="about">
           <img src="/images/about.svg" alt="" class="c-two-columns__subtitle" />
           <div class="c-two-columns__container c-container">
             <div class="c-two-columns__content">
@@ -53,9 +54,105 @@
             </div>
           </div>
         </section>
+
+        <section class="c-video c-section c-section--gray">
+          <div class="c-video__container c-container c-base-row">
+            <div class="c-video__content c-base-row__item-content">
+              <h2 class="c-video__title c-heading-large">
+                Meet Dimitri M. <br />
+                Gitelmaker
+              </h2>
+              <p class="c-video__text c-base-text">
+                Dr. Gitelmaker founded GitelCare and holds dual board certifications in Internal and Obesity Medicine. He trained at Harvard and Columbia, bringing both clinical expertise and a
+                personal approach. His own health journey drives his focus: helping patients achieve better health through proactive, personalized care.
+              </p>
+              <a href="#" class="c-video__button c-button c-button--secondary">Learn More</a>
+            </div>
+            <div class="c-video__video c-base-row__item-media">
+              <img src="/images/gitel.webp" alt="" class="c-video__image" />
+              <a href="https://www.youtube.com/watch?v=NpEaa2P7qZI" class="c-video__play-button video-lightbox">
+                <img src="/images/icons/play.svg" alt="play icon" class="c-video__play-icon" />
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="c-book c-section">
+          <div class="c-book__container c-container c-base-row">
+            <div class="c-book__image c-base-row__item-media">
+              <img src="/images/book.webp" alt="book" />
+            </div>
+            <div class="c-book__content c-base-row__item-content c-base-text">
+              <h2 class="c-book__title c-heading-large">Discover the Latest Book by Dr. Gitelmaker - Weight Loss Guide</h2>
+              <ul>
+                <li>Evidence-based weight loss strategies that work long-term</li>
+                <li>Personalized nutrition, mindset, and lifestyle approaches</li>
+                <li>Solutions for hormonal imbalances, emotional eating, and plateaus</li>
+                <li>Goal setting, habit tracking, and accountability systems</li>
+              </ul>
+              <p><strong>Transform360 provides the tools you need to take control of your weight loss journey.</strong></p>
+              <a href="#" class="c-book__button c-button c-button--secondary">Oder the book</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="c-features c-section" style="background-image: url('/images/bg-big.webp');">
+          <div class="c-features__container c-container">
+            <div class="c-features__header">
+              <h2 class="c-features__title c-heading-large c-heading-large--white">Why Choose Us</h2>
+              <div class="c-features__text c-base-text c-base-text--white">
+                <p>At our company, concierge care isn't just a model — it's a philosophy. We go beyond the basics to create a truly elevated healthcare experience for each patient.</p>
+                <p><strong>Here's what sets us apart:</strong></p>
+              </div>
+            </div>
+            <div class="c-features__list">
+              <div class="c-features__item">
+                <img src="/images/icons/1.svg" alt="" class="c-features__item-icon" />
+                <h3 class="c-features__item-title">Personalized Attention</h3>
+                <p class="c-features__item-text">You're not just another chart. Our physicians know your history, goals, and concerns, creating care plans based on your complete health picture.</p>
+              </div>
+              <div class="c-features__item">
+                <img src="/images/icons/2.svg" alt="" class="c-features__item-icon" />
+                <h3 class="c-features__item-title">Personalized Attention</h3>
+                <p class="c-features__item-text">You're not just another chart. Our physicians know your history, goals, and concerns, creating care plans based on your complete health picture.</p>
+              </div>
+              <div class="c-features__item">
+                <img src="/images/icons/3.svg" alt="" class="c-features__item-icon" />
+                <h3 class="c-features__item-title">Personalized Attention</h3>
+                <p class="c-features__item-text">You're not just another chart. Our physicians know your history, goals, and concerns, creating care plans based on your complete health picture.</p>
+              </div>
+              <div class="c-features__item">
+                <img src="/images/icons/1.svg" alt="" class="c-features__item-icon" />
+                <h3 class="c-features__item-title">Personalized Attention</h3>
+                <p class="c-features__item-text">You're not just another chart. Our physicians know your history, goals, and concerns, creating care plans based on your complete health picture.</p>
+              </div>
+              <div class="c-features__item">
+                <img src="/images/icons/2.svg" alt="" class="c-features__item-icon" />
+                <h3 class="c-features__item-title">Personalized Attention</h3>
+                <p class="c-features__item-text">You're not just another chart. Our physicians know your history, goals, and concerns, creating care plans based on your complete health picture.</p>
+              </div>
+              <div class="c-features__item">
+                <img src="/images/icons/3.svg" alt="" class="c-features__item-icon" />
+                <h3 class="c-features__item-title">Personalized Attention</h3>
+                <p class="c-features__item-text">You're not just another chart. Our physicians know your history, goals, and concerns, creating care plans based on your complete health picture.</p>
+              </div>
+            </div>
+            <div class="c-features__footer">
+              <p><strong>With our medical clinic, your care is not only more <br> personal — it’s more powerful.</strong></p>
+              <a href="#" class="c-features__button c-button c-button--primary">consult now</a>
+            </div>
+          </div>
+        </section>
       </main>
       {{> footer}}
     </div>
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <script defer>
+      const lightbox = GLightbox({
+        selector: ".video-lightbox",
+        autoplayVideos: true,
+      });
+    </script>
     <script type="module" src="/src/scripts/main.ts" defer></script>
   </body>
 </html>

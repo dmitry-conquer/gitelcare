@@ -1,0 +1,23 @@
+@use "../helpers/" as *;
+
+.c-book {
+  &__container {
+    &.c-base-row {
+      @include medium {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+
+  &__image {
+  }
+
+  &__content {
+  }
+
+  &__title {
+  }
+
+  &__button {
+  }
+}
