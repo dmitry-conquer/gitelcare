@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.css"
+      integrity="sha512-N2IsWuKsBYYiHNYdaEuK4eaRJ0onfUG+cdZilndYaMEhUGQq/McsFU75q3N+jbJUNXm6O+K52DRrK+bSpBGj0w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Home page</title>
   </head>
   <body data-smooth-scroll="true">
@@ -176,9 +183,79 @@
             </div>
           </div>
         </section>
+
+        <section class="c-services c-section" style="background-image: url(&quot;/images/bg-small.webp&quot;)">
+          <div class="c-services__container c-container">
+            <div class="c-services__header">
+              <h2 class="c-services__title c-heading-large c-heading-large--white">Our Services</h2>
+              <p class="c-services__text c-base-text c-base-text--white">Offering comprehensive medical services</p>
+            </div>
+            <div class="c-services__slider swiper-slider" id="c-services-slider">
+              <div class="c-services__slider-wrapper swiper-wrapper">
+                <div class="c-services__item swiper-slide">
+                  <a href="#" class="c-services__item-link">
+                    <h3 class="c-services__item-title">Weight Loss</h3>
+                    <img src="/images/service.png" alt="" class="c-services__item-image" />
+                  </a>
+                </div>
+                <div class="c-services__item swiper-slide">
+                  <a href="#" class="c-services__item-link">
+                    <h3 class="c-services__item-title">Weight Loss</h3>
+                    <img src="/images/service.png" alt="" class="c-services__item-image" />
+                  </a>
+                </div>
+                <div class="c-services__item swiper-slide">
+                  <a href="#" class="c-services__item-link">
+                    <h3 class="c-services__item-title">Weight Loss</h3>
+                    <img src="/images/service.png" alt="" class="c-services__item-image" />
+                  </a>
+                </div>
+                <div class="c-services__item swiper-slide">
+                  <a href="#" class="c-services__item-link">
+                    <h3 class="c-services__item-title">Weight Loss</h3>
+                    <img src="/images/service.png" alt="" class="c-services__item-image" />
+                  </a>
+                </div>
+                <div class="c-services__item swiper-slide">
+                  <a href="#" class="c-services__item-link">
+                    <h3 class="c-services__item-title">Weight Loss</h3>
+                    <img src="/images/service.png" alt="" class="c-services__item-image" />
+                  </a>
+                </div>
+                <div class="c-services__item swiper-slide">
+                  <a href="#" class="c-services__item-link">
+                    <h3 class="c-services__item-title">Weight Loss</h3>
+                    <img src="/images/service.png" alt="" class="c-services__item-image" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="c-services__navigation">
+              <div class="c-services__navigation-button c-services__navigation-button--prev">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path
+                    d="M5.58594 17.0122C5.3125 17.2409 5.3125 17.6982 5.58594 17.965C5.85938 18.2317 6.28906 18.2317 6.5625 17.965L14.4141 10.2287C14.6484 9.96191 14.6484 9.54271 14.4141 9.27594L6.5625 1.57777C6.28906 1.311 5.85938 1.311 5.58594 1.57777C5.3125 1.84454 5.3125 2.26374 5.58594 2.53051L12.7344 9.77137L5.58594 17.0122Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+              <div class="c-services__pagination pagination"></div>
+              <div class="c-services__navigation-button c-services__navigation-button--next">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path
+                    d="M5.58594 17.0122C5.3125 17.2409 5.3125 17.6982 5.58594 17.965C5.85938 18.2317 6.28906 18.2317 6.5625 17.965L14.4141 10.2287C14.6484 9.96191 14.6484 9.54271 14.4141 9.27594L6.5625 1.57777C6.28906 1.311 5.85938 1.311 5.58594 1.57777C5.3125 1.84454 5.3125 2.26374 5.58594 2.53051L12.7344 9.77137L5.58594 17.0122Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       {{> footer}}
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
     <script defer>
       const lightbox = GLightbox({
