@@ -1,6 +1,7 @@
 @use "../helpers/" as *;
 
 .c-bottom-cta {
+  padding-block: fluid(60, 132);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
