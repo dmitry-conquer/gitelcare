@@ -15,7 +15,6 @@
   </head>
   <body data-smooth-scroll="true">
     <div class="c-wrapper">
-      {{> header}}
       <main>
         <section class="c-hero">
           <video src="/video.mp4" class="c-hero__video" autoplay muted loop playsinline></video>
@@ -195,37 +194,37 @@
                 <div class="c-services__item swiper-slide">
                   <a href="#" class="c-services__item-link">
                     <h3 class="c-services__item-title">Weight Loss</h3>
-                    <img src="/images/service.png" alt="" class="c-services__item-image" />
+                    <img src="https://www.gitelcare.com/wp-content/uploads/2025/07/Internal-Medicine-1.png" alt="" class="c-services__item-image" />
                   </a>
                 </div>
                 <div class="c-services__item swiper-slide">
                   <a href="#" class="c-services__item-link">
                     <h3 class="c-services__item-title">Weight Loss</h3>
-                    <img src="/images/service.png" alt="" class="c-services__item-image" />
+                    <img src="https://www.gitelcare.com/wp-content/uploads/2025/07/Internal-Medicine-1.png" alt="" class="c-services__item-image" />
                   </a>
                 </div>
                 <div class="c-services__item swiper-slide">
                   <a href="#" class="c-services__item-link">
                     <h3 class="c-services__item-title">Weight Loss</h3>
-                    <img src="/images/service.png" alt="" class="c-services__item-image" />
+                    <img src="https://www.gitelcare.com/wp-content/uploads/2025/07/Internal-Medicine-1.png" alt="" class="c-services__item-image" />
                   </a>
                 </div>
                 <div class="c-services__item swiper-slide">
                   <a href="#" class="c-services__item-link">
                     <h3 class="c-services__item-title">Weight Loss</h3>
-                    <img src="/images/service.png" alt="" class="c-services__item-image" />
+                    <img src="https://www.gitelcare.com/wp-content/uploads/2025/07/Internal-Medicine-1.png" alt="" class="c-services__item-image" />
                   </a>
                 </div>
                 <div class="c-services__item swiper-slide">
                   <a href="#" class="c-services__item-link">
                     <h3 class="c-services__item-title">Weight Loss</h3>
-                    <img src="/images/service.png" alt="" class="c-services__item-image" />
+                    <img src="https://www.gitelcare.com/wp-content/uploads/2025/07/Internal-Medicine-1.png" alt="" class="c-services__item-image" />
                   </a>
                 </div>
                 <div class="c-services__item swiper-slide">
                   <a href="#" class="c-services__item-link">
                     <h3 class="c-services__item-title">Weight Loss</h3>
-                    <img src="/images/service.png" alt="" class="c-services__item-image" />
+                    <img src="https://www.gitelcare.com/wp-content/uploads/2025/07/Internal-Medicine-1.png" alt="" class="c-services__item-image" />
                   </a>
                 </div>
               </div>
@@ -340,17 +339,38 @@
           </div>
         </section>
       </main>
-      {{> footer}}
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+      <script defer>
+        (() => {
+          const e = () => {
+            new Swiper("#c-services-slider", {
+              slidesPerView: 4,
+              spaceBetween: 32,
+              speed: 1100,
+              pagination: { el: ".c-services__pagination", clickable: !0 },
+              navigation: { nextEl: ".c-services__navigation-button--next", prevEl: ".c-services__navigation-button--prev" },
+              breakpoints: {
+                0: { slidesPerView: 1.2, spaceBetween: 10 },
+                576: { slidesPerView: 2, spaceBetween: 16 },
+                768: { slidesPerView: 3, spaceBetween: 24 },
+                1024: { slidesPerView: 4, spaceBetween: 32 },
+              },
+            });
+          };
+          document.addEventListener("DOMContentLoaded", () => {
+            e();
+          });
+        })();
+      </script>
+      <script defer>
+        const lightbox = GLightbox({
+          selector: ".video-lightbox",
+          autoplayVideos: true,
+        });
+      </script>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
-    <script defer>
-      const lightbox = GLightbox({
-        selector: ".video-lightbox",
-        autoplayVideos: true,
-      });
-    </script>
     <script type="module" src="/src/scripts/main.ts" defer></script>
   </body>
 </html>

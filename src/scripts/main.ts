@@ -1,9 +1,9 @@
 import "../styles/main.scss";
-import AdaptiveDOM from "./utils/AdaptiveDOM";
-import { Header } from "./components/Header";
+// import AdaptiveDOM from "./utils/AdaptiveDOM";
+// import { Header } from "./components/Header";
 
 const initUIComponents = (): void => {
-  new Header();
+  // new Header();
 
   //@ts-expect-error Swiper is declared globally
   new Swiper("#c-services-slider", {
@@ -40,6 +40,6 @@ const initUIComponents = (): void => {
 };
 
 document.addEventListener("DOMContentLoaded", (): void => {
-  new AdaptiveDOM();
+  // new AdaptiveDOM();
   initUIComponents();
 });
