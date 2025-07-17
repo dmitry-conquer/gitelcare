@@ -1,0 +1,31 @@
+@use "../helpers/" as *;
+
+.c-widgets {
+  &__container {
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(40, 60);
+  }
+
+  &__item {
+    &--google {
+      .es-embed-root {
+        max-width: 100% !important;
+      }
+    }
+
+    &--instagram {
+      & > div > div {
+        max-width: rem(1180);
+        margin: 0 auto;
+      }
+    }
+  }
+}
