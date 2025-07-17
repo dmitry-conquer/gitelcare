@@ -6,15 +6,15 @@
   font-size: rem(16);
   font-weight: 700;
   line-height: 1.125;
-  letter-spacing: -0.08em;
   text-transform: uppercase;
   padding-block: rem(14);
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
   @include hover {
-    opacity: 0.8;
+    background-color: var(--color-dark);
+    color: #fff;
   }
 
   &--primary {
@@ -24,5 +24,6 @@
 
   &--secondary {
     padding-inline: rem(60);
+    border: rem(1) solid var(--color-dark);
   }
 }

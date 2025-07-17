@@ -1,0 +1,57 @@
+@use "../helpers/" as *;
+
+.c-two-columns {
+  position: relative;
+
+  &__subtitle {
+    position: absolute;
+    top: fluid(60, 80);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+
+  &__container {
+    padding-top: fluid(32, 80);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__columns {
+    max-width: rem(872);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: rem(8) rem(40);
+    margin-bottom: fluid(24, 40);
+
+    @include x-small {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__column {
+    &:nth-child(1) {
+      text-align: right;
+
+      @include x-small {
+        text-align: center;
+      }
+    }
+    &:nth-child(2) {
+      @include x-small {
+        text-align: center;
+      }
+    }
+  }
+
+  &__button {
+  }
+}

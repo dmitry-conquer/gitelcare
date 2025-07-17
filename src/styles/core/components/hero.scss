@@ -1,0 +1,85 @@
+@use "../helpers/" as *;
+
+.c-hero {
+  @keyframes scrollDown {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(10px);
+    }
+  }
+
+  position: relative;
+  padding: fluid(215, 300) 0 rem(300) 0;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  &__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 5;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    max-width: rem(855);
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  &__title {
+    color: #fff;
+    text-align: center;
+    font-size: fluid(60, 80);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: rem(24);
+  }
+
+  &__subtitle {
+    color: #fff;
+    font-size: fluid(20, 24);
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: rem(24);
+  }
+
+  &__scroll-down {
+    position: absolute;
+    bottom: rem(80);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 6;
+    animation: scrollDown 0.5s infinite alternate ease;
+    padding: rem(20);
+    margin: rem(-20);
+    color: #fff;
+    transition: color 0.3s ease;
+
+    @include hover {
+      color: var(--color-accent);
+    }
+  }
+}
