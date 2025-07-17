@@ -1,0 +1,58 @@
+@use "../helpers/" as *;
+
+.c-areas {
+  &__container {
+    align-items: stretch !important;
+  }
+
+  &__content {
+    align-items: stretch;
+  }
+
+  &__title {
+    @include x-small {
+      text-align: center !important;
+    }
+  }
+
+  &__text {
+    &:not(:last-child) {
+      margin-bottom: rem(12);
+    }
+    &:has(strong) {
+      margin: 0 !important;
+    }
+
+    &:last-child {
+      font-size: rem(16);
+    }
+
+    @include x-small {
+      text-align: center !important;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: fluid(6, 12);
+    margin-block: fluid(12, 24);
+
+    @include x-small {
+      grid-template-columns: 1fr;
+    }
+
+    li {
+      font-size: rem(14);
+      font-weight: 700;
+      line-height: 1;
+      text-transform: uppercase;
+      padding: fluid(7, 14) rem(5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      text-align: center;
+    }
+  }
+}
