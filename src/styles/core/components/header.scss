@@ -40,6 +40,10 @@
         &:hover {
           color: var(--color-dark-light);
         }
+
+        @include x-large {
+          align-items: flex-start;
+        }
       }
     }
     &-right {
@@ -59,6 +63,12 @@
 
         @include hover {
           color: var(--color-dark-light);
+        }
+
+        @include x-large {
+          font-size: 1rem;
+          line-height: 1.5;
+          font-weight: 400;
         }
       }
     }
@@ -92,6 +102,10 @@
         display: flex;
         align-items: center;
         column-gap: rem(8);
+
+        @include x-large {
+          font-weight: bold;
+        }
         &::after {
           content: "";
           background-image: url("data:image/svg+xml,%3Csvg%20width%3D%228%22%20height%3D%228%22%20viewBox%3D%220%200%208%208%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cmask%20id%3D%22mask0_45_2224%22%20style%3D%22mask-type%3Aalpha%22%20maskUnits%3D%22userSpaceOnUse%22%20x%3D%220%22%20y%3D%220%22%20width%3D%228%22%20height%3D%228%22%3E%3Cg%20clip-path%3D%22url(%23clip0_45_2224)%22%3E%3Cpath%20d%3D%22M7.35%202.15C7.15%201.95%206.85%201.95%206.65%202.15L4%204.8L1.35%202.15C1.15%201.95%200.85%201.95%200.65%202.15C0.55%202.25%200.5%202.35%200.5%202.5C0.5%202.65%200.55%202.75%200.65%202.85L3.65%205.85C3.75%205.95%203.85%206%204%206C4.15%206%204.25%205.95%204.35%205.85L7.35%202.85C7.45%202.75%207.5%202.65%207.5%202.5C7.5%202.35%207.45%202.25%207.35%202.15Z%22%20fill%3D%22black%22%2F%3E%3C%2Fg%3E%3C%2Fmask%3E%3Cg%20mask%3D%22url(%23mask0_45_2224)%22%3E%3Crect%20width%3D%228%22%20height%3D%228%22%20fill%3D%22%230F0F0F%22%2F%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22clip0_45_2224%22%3E%3Crect%20width%3D%228%22%20height%3D%228%22%20fill%3D%22white%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3C%2Fsvg%3E");
@@ -117,6 +131,17 @@
         pointer-events: none;
 
         min-width: rem(300);
+
+        @include x-large {
+          position: static;
+          min-width: 100%;
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+          transform: translateY(0);
+          box-shadow: none;
+          padding: 0;
+        }
       }
     }
 
@@ -147,12 +172,9 @@
       margin-bottom: 0;
     }
 
-    @include hover {
-      > .c-header__submenu-list {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-        transform: translateY(0);
+    &.is-active > a {
+      &::after {
+        transform: rotate(180deg);
       }
     }
   }
@@ -170,6 +192,7 @@
   }
 
   &__submenu-list {
+    // Десктоп: відкриття через :hover
     position: absolute;
     left: 0;
     top: 100%;
@@ -180,12 +203,29 @@
     visibility: hidden;
     pointer-events: none;
     z-index: 10;
-
     transform: translateY(10px);
     padding: rem(8) 0;
     display: flex;
     flex-direction: column;
     gap: 0;
+
+    @include x-large {
+      position: static;
+      min-width: 100%;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
+      display: none !important;
+      box-shadow: none;
+      padding: 0;
+    }
+  }
+
+  @include x-large {
+    .is-active > .c-header__submenu-list {
+      display: flex !important;
+    }
   }
 
   &__submenu-item {
@@ -203,18 +243,25 @@
     }
 
     &.has-children {
+      &.is-active > a {
+        &::after {
+          transform: rotate(180deg);
+        }
+      }
       & > a {
         &::after {
           transform: rotate(-90deg);
+
+          @include x-large {
+            transform: rotate(0deg);
+          }
         }
       }
 
       & > ul {
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-
         display: flex;
         flex-direction: column;
-        row-gap: rem(8);
         background-color: #fff;
         position: absolute;
         opacity: 0;
@@ -226,6 +273,10 @@
 
         min-width: rem(300);
       }
+    }
+
+    @include x-large {
+      padding: 0;
     }
   }
 
@@ -369,4 +420,95 @@
       transform: rotate(-45deg);
     }
   }
+}
+
+// --- Початок нових селекторів для відкриття підменю через вкладеність тегів ---
+
+// Основне меню: відкриття підменю при наведенні на li
+.c-header ul > li {
+  position: relative;
+
+  &:hover > ul,
+  &:focus-within > ul {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  &.is-active > ul {
+    margin-top: rem(10);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+}
+
+.c-header ul > li > ul {
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  top: 100%;
+  max-width: max-content;
+  visibility: hidden;
+  pointer-events: none;
+  min-width: rem(300);
+  z-index: 10;
+  transform: translateY(10px);
+  padding: rem(8) 0;
+  gap: 0;
+
+  @include x-large {
+    position: static;
+    min-width: 100%;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+}
+
+.c-header ul > li > ul > li {
+  position: relative;
+}
+.c-header ul > li > ul > li:hover > ul,
+.c-header ul > li > ul > li:focus-within > ul {
+  left: 100%;
+  top: 0;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.c-header ul > li > ul > li.is-active > ul {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) translateX(rem(20));
+  margin-top: 0;
+}
+
+.c-header ul > li > ul > li > ul {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  position: absolute;
+  opacity: 0;
+  right: 0;
+  top: 0;
+  max-width: max-content;
+  visibility: hidden;
+  pointer-events: none;
+  min-width: rem(300);
+  z-index: 10;
+  transform: translateY(10px);
+  padding: rem(8) 0;
+  gap: 0;
 }

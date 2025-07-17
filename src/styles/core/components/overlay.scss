@@ -19,9 +19,14 @@
     transform: translateX(0);
   }
 
+  @include x-small {
+    max-width: 100%;
+  }
+
   &__inner {
     padding: rem(80) rem(15) rem(50) rem(15);
     height: 100%;
+    width: 100%;
     display: inline-block;
     overflow: auto;
   }
@@ -31,9 +36,14 @@
     display: flex;
     column-gap: rem(42);
     align-items: flex-end;
+    justify-content: space-between;
   }
 
   &__column {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(24);
+
     &--left {
       flex-basis: rem(218);
       flex-shrink: 0;
