@@ -41,6 +41,9 @@ html.is-lock {
     font-size: inherit;
     font-weight: inherit;
     line-height: inherit;
+    &:not(:last-of-type) {
+      margin-bottom: rem(12);
+    }
   }
 }
 
