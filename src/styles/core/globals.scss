@@ -11,6 +11,9 @@ html.is-lock {
   --color-dark-light: #707070;
   --color-accent: #fff04b;
   --header-mobile-height: #{fluid(62, 90)};
+  --container-width: #{rem(1560)};
+  --container-padding-x: #{rem(20)};
+  --section-padding-y: #{fluid(40, 80)};
 
   overflow: hidden;
   position: relative;
